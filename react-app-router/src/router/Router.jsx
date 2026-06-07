@@ -4,6 +4,7 @@ import { Page2 } from "../Page2";
 import { Page1 } from "../Page1";
 import { page1Routes } from "./Page1Routes";
 import { page2Routes } from "./Page2Routes";
+import { Page404 } from "../Page404";
 
 export const Router = () => {
   return (
@@ -17,6 +18,10 @@ export const Router = () => {
         {page2Routes.map((route) => (
           <Route path={route.path} element={route.children} />
         ))}
+
+
+<Route path="*" element={<Page404 />} />
+
     </Routes>
   );
 };
